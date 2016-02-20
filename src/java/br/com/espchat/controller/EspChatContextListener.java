@@ -38,7 +38,7 @@ public class EspChatContextListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        EntityManagerProvider.getInstance().createEntityManager();
+        EntityManagerProvider.getInstance().getEntityManager();
         /**
          * Inicializa objetos de controle de usuários e de mensagens
          */
@@ -74,7 +74,7 @@ public class EspChatContextListener implements ServletContextListener {
         /**
          * Obtém classe responsável por persistir os dados
          */
-        PersistenceDelegator persistence = PersistenceDelegator.createInstance(EntityManagerProvider.getInstance().createEntityManager());
+        PersistenceDelegator persistence = PersistenceDelegator.createInstance(EntityManagerProvider.getInstance().getEntityManager());
 
         /**
          * Obtém o usuário logado

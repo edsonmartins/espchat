@@ -88,7 +88,7 @@
     /**
      * Obtém classe responsável por persistir os dados
      */
-    PersistenceDelegator persistence = PersistenceDelegator.createInstance(EntityManagerProvider.getInstance().createEntityManager());
+    PersistenceDelegator persistence = PersistenceDelegator.createInstance(EntityManagerProvider.getInstance().getEntityManager());
 
     /**
      * Localiza usuário pelo seu nickName e tipo.

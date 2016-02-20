@@ -6,13 +6,15 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author edson
+ * @author Edson Martins
  */
 public class EntityManagerProvider {
 
     private static final EntityManagerProvider INSTANCE = new EntityManagerProvider();
 
     private final EntityManagerFactory factory;
+    
+    public ThreadLocal<EntityManager> ems = new ThreadLocal<>();
 
     private EntityManagerProvider() {
         this.factory = Persistence.createEntityManagerFactory("espchatPU");
@@ -26,7 +28,10 @@ public class EntityManagerProvider {
         return factory;
     }
 
-    public EntityManager createEntityManager() {
-        return factory.createEntityManager();
+    public EntityManager getEntityManager() {
+        if (ems.get()==null){
+            ems.set(factory.createEntityManager());
+        }
+        return ems.get();
     }
 }

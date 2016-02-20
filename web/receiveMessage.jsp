@@ -21,7 +21,7 @@
     /**
      * Obtém classe responsável por persistir os dados
      */
-    PersistenceDelegator persistence = PersistenceDelegator.createInstance(EntityManagerProvider.getInstance().createEntityManager());
+    PersistenceDelegator persistence = PersistenceDelegator.createInstance(EntityManagerProvider.getInstance().getEntityManager());
 
     /**
      * Obtém o usuário logado
