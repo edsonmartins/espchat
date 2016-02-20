@@ -37,6 +37,7 @@ function getXMLHttpRequest() {
  * @returns {undefined}
  */
 function pressed(e) {
+    e.preventDefault();
     if ((window.event ? event.keyCode : e.which) == 13) {
         sendMessage();
     }
@@ -281,6 +282,7 @@ function onSelectCommunicationType(event) {
         };
         client.onerror = function (error) {
             console.log('WebSocket Error ' + error);
+            window.location = "index.jsp";
         };
 
     } else {
