@@ -282,7 +282,6 @@ function onSelectCommunicationType(event) {
         };
         client.onerror = function (error) {
             console.log('WebSocket Error ' + error);
-            window.location = "index.jsp";
         };
 
     } else {

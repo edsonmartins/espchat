@@ -46,6 +46,7 @@ public class LoggedUserFilter implements Filter {
         return (sessionUser == null)
                 && (!url.contains(Constants.LOGIN_PAGE)
                 && !url.contains(Constants.VALIDATE_LOGIN)
+                && !url.contains(Constants.REGISTER_USER)
                 && !url.contains(Constants.VALIDATE_LOGIN_SOCIAL)
                 && url.contains(Constants.JSP_PAGES_EXTENSION));
     }

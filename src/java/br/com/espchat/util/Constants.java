@@ -71,5 +71,7 @@ public class Constants {
     public static String IMAGE_PNG = "image/png";
     
     public static String PNG = "png";
+    
+    public static String REGISTER_USER = "registerUser.jsp";
 
 }
